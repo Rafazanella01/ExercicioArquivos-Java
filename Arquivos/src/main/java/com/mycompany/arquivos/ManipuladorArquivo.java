@@ -20,24 +20,24 @@ public class ManipuladorArquivo {
                 System.out.println("\nEste e o conteudo do arquivo: ");
 		while (true) {
 			if (linha != null) {
-				System.out.println(linha);
+				System.out.println(linha); //Exibe a linha atual no console
 
 			} else
 				break;
-			linha = buffRead.readLine();
+			linha = buffRead.readLine(); //Lê a próxima linha do arquivo
 		}
-		buffRead.close();
+		buffRead.close(); //Fecha o BufferedReader
 	}
 
 	public static void escritor(String path) throws IOException {
             //Cria o arquivo se ele não existir
-            File file = new File(path);
+            File file = new File(path); //Cria um objeto File representando o arquivo
             if (!file.exists()) {
                 file.createNewFile();
             }
 
             //Escreve no arquivo
-            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(file, true)); // O segundo argumento true adiciona texto ao arquivo existente
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(file, true)); //O segundo argumento true adiciona texto ao arquivo existente
             Scanner in = new Scanner(System.in);
             System.out.println("Escreva algo: ");
             String linha = in.nextLine();
